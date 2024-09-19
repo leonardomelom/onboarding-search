@@ -5,17 +5,18 @@ import './App.css';
 import './input.css';
 
 function App() {
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState('');
+  const [password, setPassword] = useState('');
+  const [search, setSearch] = useState('');
   const [htmlContent, setHtmlContent] = useState('');
 
-  const [search, setSearch] = useState('');
-  function getUser(localizer) {
+  function getUser(localizer, user, password) {
     const options = {
       method: 'GET',
     };
 
     fetch(
-      `https://api.checkout.prodigioeducacao.com/events/${localizer}?email=leonardo.melo@proenem.com.br&password=Promilitares@123`,
+      `https://api.checkout.prodigioeducacao.com/events/${localizer}?email=${user}@proenem.com.br&password=${password}`,
       options
     )
       .then((response) => response.text(response))
@@ -25,7 +26,7 @@ function App() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await getUser(search);
+    await getUser(search, user, password);
   };
 
   return (
@@ -44,7 +45,24 @@ function App() {
             onChange={(e) => setSearch(e.target.value)}
           />
         </label>
-
+        <label className="flex flex-row gap-1 ">
+         Usuário
+          <input
+            className="border border-white px-1 rounded bg-slate-700 w-[200px] h-8"
+            type="text"
+            value={search}
+            onChange={(e) => setUser(e.target.value)}
+          />
+        </label>
+        <label className="flex flex-row gap-1 ">
+         Senha
+          <input
+            className="border border-white px-1 rounded bg-slate-700 w-[200px] h-8"
+            type="text"
+            value={search}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </label>
         <button
           className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           type="submit"

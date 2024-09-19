@@ -34,7 +34,7 @@ function App() {
       <p className="read-the-docs">Coloque o número do pedido abaixo</p>
       <form
         onSubmit={handleSubmit}
-        className=" mb-8 w-auto flex flex-row gap-2 justify-center items-center"
+        className="form-onboarding mb-8 w-auto flex flex-row gap-2 justify-center items-center"
       >
         <label className="flex flex-row gap-1 ">
           Número do pedido
@@ -50,7 +50,7 @@ function App() {
           <input
             className="border border-white px-1 rounded bg-slate-700 w-[200px] h-8"
             type="text"
-            value={search}
+            value={user}
             onChange={(e) => setUser(e.target.value)}
           />
         </label>
@@ -59,7 +59,7 @@ function App() {
           <input
             className="border border-white px-1 rounded bg-slate-700 w-[200px] h-8"
             type="text"
-            value={search}
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>

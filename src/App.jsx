@@ -36,7 +36,7 @@ function App() {
         onSubmit={handleSubmit}
         className="form-onboarding mb-8 w-auto flex flex-row gap-2 justify-center items-center"
       >
-        <label className="flex flex-row gap-1 ">
+        <label className="flex flex-row gap-1 label-wrapper">
           Número do pedido
           <input
             className="border border-white px-1 rounded bg-slate-700 w-[200px] h-8"
@@ -45,7 +45,7 @@ function App() {
             onChange={(e) => setSearch(e.target.value)}
           />
         </label>
-        <label className="flex flex-row gap-1 ">
+        <label className="flex flex-row gap-1 label-wrapper">
          Usuário
           <input
             className="border border-white px-1 rounded bg-slate-700 w-[200px] h-8"
@@ -54,11 +54,11 @@ function App() {
             onChange={(e) => setUser(e.target.value)}
           />
         </label>
-        <label className="flex flex-row gap-1 ">
+        <label className="flex flex-row gap-1 label-wrapper">
          Senha
           <input
             className="border border-white px-1 rounded bg-slate-700 w-[200px] h-8"
-            type="text"
+            type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
